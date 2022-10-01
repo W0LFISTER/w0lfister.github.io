@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "43588f48a766344b",
+    "type": "split",
+    "children": [
+      {
+        "id": "d8639350542a8280",
+        "type": "leaf",
+        "dimension": 77.87610619469027,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "11d49ee8940ccfd5",
+        "type": "leaf",
+        "dimension": 22.123893805309734,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "zz Templates/temp stuff.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2a9f9b344f709f53",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd210ed8bba66d68",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "975ef7664bd8fbb0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "1190e392a6788935",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#redis_version",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e3df775e5dc31978",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 238.5
+  },
+  "right": {
+    "id": "67f628f742d94d69",
+    "type": "split",
+    "children": [
+      {
+        "id": "3ee478f07f93adf1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dce6538b6234fedd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "12e5b35d9da64a23",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d5661a8c862479be",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e6e7d0e2fdec322b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "d8639350542a8280",
+  "lastOpenFiles": [
+    "SERVICES/WinRM/evil-winrm.md",
+    "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+    "TOOLS/johntheripper/HOW TO.md",
+    "TOOLS/johntheripper/MAN.md",
+    "zz Templates/temp stuff.md",
+    "TOOLS/gobuster/cheatsheet.md",
+    "CTE/HTB/STARTING POINT/TIER1/Crocodile.md",
+    "zz Templates/HTBTEMP.md",
+    "CTE/HTB/STARTING POINT/TIER1/Appointment.md",
+    "CTE/HTB/STARTING POINT/TIER1/Sequel.md"
+  ]
+}

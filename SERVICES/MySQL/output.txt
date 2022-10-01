@@ -1,0 +1,1005 @@
+Code language: SQL (Structured Query Language) (sql)
+Connect to MySQL Server with a specified database using a username and password:
+```bash
+mysql -u [username] -p [database];
+```Code language: SQL (Structured Query Language) (sql)
+Exit mysql command-line client:
+```bash
+exit;
+```Code language: SQL (Structured Query Language) (sql)
+[Export data using mysqldump tool](https://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx)
+```bash
+```mysqldump -u [username] -p [database] > data_backup.sql;
+```bash
+`
+```Code language: SQL (Structured Query Language) (sql)
+To clear MySQL screen console window on Linux, you use the following command:
+```bash
+mysql> system clear;
+```Code language: SQL (Structured Query Language) (sql)
+Currently, there is no command available on Windows OS for clearing MySQL screen console window.
+## Working with databases
+[Create a database](https://www.mysqltutorial.org/mysql-create-drop-database.aspx) with a specified name if it does not exist in the database server
+```bash
+CREATE DATABASE [IF NOT EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Use a database or change the current database to another database that you are working with:
+```bash
+USE database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a database with a specified name permanently. All physical files associated with the database will be deleted.
+```bash
+DROP DATABASE [IF EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show all available databases in the current MySQL database server
+```bash
+SHOW DATABASE;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with tables
+Show all tables in a current database.
+```bash
+SHOW TABLES;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a new table](https://www.mysqltutorial.org/mysql-create-table/)
+```bash
+CREATE TABLE [IF NOT EXISTS] table_name(   column_list );
+```Code language: SQL (Structured Query Language) (sql)
+[Add a new column](https://www.mysqltutorial.org/mysql-add-column/) into a table:
+```bash
+ALTER TABLE table  ADD [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Drop a column](https://www.mysqltutorial.org/mysql-drop-column/) from a table:
+```bash
+ALTER TABLE table_name DROP [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+Add index with a specific name to a table on a column:
+```bash
+ALTER TABLE table  ADD INDEX [name](column, ...);
+```Code language: SQL (Structured Query Language) (sql)
+Add [primary key](https://www.mysqltutorial.org/mysql-primary-key/) into a table:
+```bash
+ALTER TABLE table_name  ADD PRIMARY KEY (column_name,...);
+```Remove the primary key of a table:
+```bash
+ALTER TABLE table_name DROP PRIMARY KEY;
+```[Drop a table](https://www.mysqltutorial.org/mysql-drop-table):
+```bash
+DROP TABLE [IF EXISTS] table_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Show the columns](https://www.mysqltutorial.org/mysql-show-columns/) of a table:
+```bash
+DESCRIBE table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show the information of a column in a table:
+```bash
+DESCRIBE table_name column_name;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with indexes
+[Creating an index](https://www.mysqltutorial.org/mysql-index/mysql-create-index/) with the specified name on a table:
+```bash
+CREATE INDEX index_name ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+[Drop an index](https://www.mysqltutorial.org/mysql-index/mysql-drop-index/):
+```bash
+DROP INDEX index_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a unique index](https://www.mysqltutorial.org/mysql-unique/):
+```bash
+CREATE UNIQUE INDEX index_name  ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+## Working with views
+Create a new view:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS    select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Create a new view with the `WITH CHECK OPTION`:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS select_statement WITH CHECK OPTION;
+```Code language: SQL (Structured Query Language) (sql)
+Create or replace a view:
+```bash
+CREATE OR REPLACE view_name  AS  select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a view:
+```bash
+DROP VIEW [IF EXISTS] view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop multiple views:
+```bash
+DROP VIEW [IF EXISTS] view1, view2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Rename a view:
+```bash
+RENAME TABLE view_name TO new_view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show views from a database:
+```bash
+SHOW FULL TABLES [{FROM | IN } database_name] WHERE table_type = 'VIEW';
+```Code language: SQL (Structured Query Language) (sql)
+## Working with triggers
+Create a new trigger:
+```bash
+CREATE TRIGGER trigger_name {BEFORE | AFTER} {INSERT | UPDATE| DELETE } ON table_name FOR EACH ROW trigger_body;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a trigger:
+```bash
+DROP TRIGGER [IF EXISTS] trigger_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show triggers in a database:
+```bash
+SHOW TRIGGERS [{FROM | IN} database_name] [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored procedures
+Create a stored procedure:
+```bash
+DELIMITER $$  CREATE PROCEDURE procedure_name(parameter_list) BEGIN    body; END $$  DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored procedure:
+```bash
+DROP PROCEDURE [IF EXISTS] procedure_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored procedures:
+```bash
+SHOW PROCEDURE STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored functions
+Create a new stored function:
+```bash
+DELIMITER $$   CREATE FUNCTION function_name(parameter_list) RETURNS datatype [NOT] DETERMINISTIC BEGIN  -- statements END $$   DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored function:
+```bash
+DROP FUNCTION [IF EXISTS] function_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored functions:
+```bash
+SHOW FUNCTION STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Querying data from tables
+[Query all data](https://www.mysqltutorial.org/mysql-select-statement-query-data.aspx) from a table:
+```bash
+SELECT * FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from one or more column of a table:
+```bash
+SELECT      column1, column2, ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Remove duplicate rows from the result of a query:
+```bash
+SELECT      DISTINCT (column) FROM     table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data with a filter using a `[WHERE](https://www.mysqltutorial.org/mysql-where/)` clause:
+```bash
+SELECT select_list FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+Change the output of the column name using [column alias](https://www.mysqltutorial.org/mysql-alias/):
+```bash
+SELECT      column1 AS alias_name,     expression AS alias,     ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [inner join](https://www.mysqltutorial.org/mysql-inner-join.aspx):
+```bash
+SELECT select_list FROM table1 INNER JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [left join](https://www.mysqltutorial.org/mysql-left-join.aspx):
+```bash
+SELECT select_list FROM table1  LEFT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [right join](https://www.mysqltutorial.org/mysql-right-join/):
+```bash
+SELECT select_list  FROM table1  RIGHT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Make a Cartesian product of rows:
+```bash
+SELECT select_list FROM table1 CROSS JOIN table2;
+```Code language: SQL (Structured Query Language) (sql)
+[Counting rows](https://www.mysqltutorial.org/mysql-count/) in a table.
+```bash
+SELECT COUNT(*) FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Sorting a result set:
+```bash
+SELECT      select_list FROM      table_name ORDER BY      column1 ASC [DESC],      column2 ASC [DESC];
+```Code language: SQL (Structured Query Language) (sql)
+Group rows using the [`GROUP BY`](https://www.mysqltutorial.org/mysql-group-by.aspx) clause.
+```bash
+SELECT select_list FROM table_name GROUP BY column_1, column_2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Filter group using the `[HAVING](https://www.mysqltutorial.org/mysql-having.aspx)` clause:
+```bash
+SELECT select_list FROM table_name GROUP BY column1 HAVING condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Modifying data in tables
+[Insert a new row](https://www.mysqltutorial.org/mysql-insert-statement.aspx) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list);
+```Code language: SQL (Structured Query Language) (sql)
+[Insert multiple rows](https://www.mysqltutorial.org/mysql-insert-multiple-rows/) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list1),       (value_list2),       (value_list3),       ...;
+```Code language: SQL (Structured Query Language) (sql)
+[Update](https://www.mysqltutorial.org/mysql-update-data.aspx) all rows in a table:
+```bash
+UPDATE table_name SET column1 = value1,     ...;
+```Code language: SQL (Structured Query Language) (sql)
+Update data for a set of rows specified by a condition in `WHERE` clause.
+```bash
+UPDATE table_name SET column_1 = value_1,     ... WHERE condition
+```Code language: SQL (Structured Query Language) (sql)
+[Update with join](https://www.mysqltutorial.org/mysql-update-join/)
+```bash
+UPDATE      table1,      table2 INNER JOIN table1 ON table1.column1 = table2.column2 SET column1 = value1, WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete all rows in a table](https://www.mysqltutorial.org/mysql-delete-statement.aspx)
+```bash
+DELETE FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Delete rows specified by a condition:
+```bash
+DELETE FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete with join](https://www.mysqltutorial.org/mysql-delete-join/)
+```bash
+DELETE table1, table2 FROM table1 INNER JOIN table2     ON table1.column1 = table2.column2 WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Searching
+Search for data using the `[LIKE](https://www.mysqltutorial.org/mysql-like/)` operator:
+```bash
+SELECT select_list FROM table_name WHERE column LIKE '%pattern%';
+```Code language: SQL (Structured Query Language) (sql)
+Text search using a [regular expression](https://www.mysqltutorial.org/mysql-regular-expression-regexp.aspx) with `RLIKE` operator.
+```bash
+SELECT select_list FROM table_name WHERE column RLIKE 'regular_expression'
+```Code language: SQL (Structured Query Language) (sql)
+Connect to MySQL Server with a specified database using a username and password:
+```bash
+mysql -u [username] -p [database];
+```Code language: SQL (Structured Query Language) (sql)
+Exit mysql command-line client:
+```bash
+exit;
+```Code language: SQL (Structured Query Language) (sql)
+[Export data using mysqldump tool](https://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx)
+```bash
+```mysqldump -u [username] -p [database] > data_backup.sql;
+```bash
+`
+```Code language: SQL (Structured Query Language) (sql)
+To clear MySQL screen console window on Linux, you use the following command:
+```bash
+mysql> system clear;
+```Code language: SQL (Structured Query Language) (sql)
+Currently, there is no command available on Windows OS for clearing MySQL screen console window.
+## Working with databases
+[Create a database](https://www.mysqltutorial.org/mysql-create-drop-database.aspx) with a specified name if it does not exist in the database server
+```bash
+CREATE DATABASE [IF NOT EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Use a database or change the current database to another database that you are working with:
+```bash
+USE database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a database with a specified name permanently. All physical files associated with the database will be deleted.
+```bash
+DROP DATABASE [IF EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show all available databases in the current MySQL database server
+```bash
+SHOW DATABASE;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with tables
+Show all tables in a current database.
+```bash
+SHOW TABLES;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a new table](https://www.mysqltutorial.org/mysql-create-table/)
+```bash
+CREATE TABLE [IF NOT EXISTS] table_name(   column_list );
+```Code language: SQL (Structured Query Language) (sql)
+[Add a new column](https://www.mysqltutorial.org/mysql-add-column/) into a table:
+```bash
+ALTER TABLE table  ADD [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Drop a column](https://www.mysqltutorial.org/mysql-drop-column/) from a table:
+```bash
+ALTER TABLE table_name DROP [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+Add index with a specific name to a table on a column:
+```bash
+ALTER TABLE table  ADD INDEX [name](column, ...);
+```Code language: SQL (Structured Query Language) (sql)
+Add [primary key](https://www.mysqltutorial.org/mysql-primary-key/) into a table:
+```bash
+ALTER TABLE table_name  ADD PRIMARY KEY (column_name,...);
+```Remove the primary key of a table:
+```bash
+ALTER TABLE table_name DROP PRIMARY KEY;
+```[Drop a table](https://www.mysqltutorial.org/mysql-drop-table):
+```bash
+DROP TABLE [IF EXISTS] table_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Show the columns](https://www.mysqltutorial.org/mysql-show-columns/) of a table:
+```bash
+DESCRIBE table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show the information of a column in a table:
+```bash
+DESCRIBE table_name column_name;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with indexes
+[Creating an index](https://www.mysqltutorial.org/mysql-index/mysql-create-index/) with the specified name on a table:
+```bash
+CREATE INDEX index_name ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+[Drop an index](https://www.mysqltutorial.org/mysql-index/mysql-drop-index/):
+```bash
+DROP INDEX index_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a unique index](https://www.mysqltutorial.org/mysql-unique/):
+```bash
+CREATE UNIQUE INDEX index_name  ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+## Working with views
+Create a new view:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS    select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Create a new view with the `WITH CHECK OPTION`:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS select_statement WITH CHECK OPTION;
+```Code language: SQL (Structured Query Language) (sql)
+Create or replace a view:
+```bash
+CREATE OR REPLACE view_name  AS  select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a view:
+```bash
+DROP VIEW [IF EXISTS] view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop multiple views:
+```bash
+DROP VIEW [IF EXISTS] view1, view2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Rename a view:
+```bash
+RENAME TABLE view_name TO new_view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show views from a database:
+```bash
+SHOW FULL TABLES [{FROM | IN } database_name] WHERE table_type = 'VIEW';
+```Code language: SQL (Structured Query Language) (sql)
+## Working with triggers
+Create a new trigger:
+```bash
+CREATE TRIGGER trigger_name {BEFORE | AFTER} {INSERT | UPDATE| DELETE } ON table_name FOR EACH ROW trigger_body;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a trigger:
+```bash
+DROP TRIGGER [IF EXISTS] trigger_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show triggers in a database:
+```bash
+SHOW TRIGGERS [{FROM | IN} database_name] [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored procedures
+Create a stored procedure:
+```bash
+DELIMITER $$  CREATE PROCEDURE procedure_name(parameter_list) BEGIN    body; END $$  DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored procedure:
+```bash
+DROP PROCEDURE [IF EXISTS] procedure_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored procedures:
+```bash
+SHOW PROCEDURE STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored functions
+Create a new stored function:
+```bash
+DELIMITER $$   CREATE FUNCTION function_name(parameter_list) RETURNS datatype [NOT] DETERMINISTIC BEGIN  -- statements END $$   DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored function:
+```bash
+DROP FUNCTION [IF EXISTS] function_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored functions:
+```bash
+SHOW FUNCTION STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Querying data from tables
+[Query all data](https://www.mysqltutorial.org/mysql-select-statement-query-data.aspx) from a table:
+```bash
+SELECT * FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from one or more column of a table:
+```bash
+SELECT      column1, column2, ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Remove duplicate rows from the result of a query:
+```bash
+SELECT      DISTINCT (column) FROM     table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data with a filter using a `[WHERE](https://www.mysqltutorial.org/mysql-where/)` clause:
+```bash
+SELECT select_list FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+Change the output of the column name using [column alias](https://www.mysqltutorial.org/mysql-alias/):
+```bash
+SELECT      column1 AS alias_name,     expression AS alias,     ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [inner join](https://www.mysqltutorial.org/mysql-inner-join.aspx):
+```bash
+SELECT select_list FROM table1 INNER JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [left join](https://www.mysqltutorial.org/mysql-left-join.aspx):
+```bash
+SELECT select_list FROM table1  LEFT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [right join](https://www.mysqltutorial.org/mysql-right-join/):
+```bash
+SELECT select_list  FROM table1  RIGHT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Make a Cartesian product of rows:
+```bash
+SELECT select_list FROM table1 CROSS JOIN table2;
+```Code language: SQL (Structured Query Language) (sql)
+[Counting rows](https://www.mysqltutorial.org/mysql-count/) in a table.
+```bash
+SELECT COUNT(*) FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Sorting a result set:
+```bash
+SELECT      select_list FROM      table_name ORDER BY      column1 ASC [DESC],      column2 ASC [DESC];
+```Code language: SQL (Structured Query Language) (sql)
+Group rows using the [`GROUP BY`](https://www.mysqltutorial.org/mysql-group-by.aspx) clause.
+```bash
+SELECT select_list FROM table_name GROUP BY column_1, column_2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Filter group using the `[HAVING](https://www.mysqltutorial.org/mysql-having.aspx)` clause:
+```bash
+SELECT select_list FROM table_name GROUP BY column1 HAVING condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Modifying data in tables
+[Insert a new row](https://www.mysqltutorial.org/mysql-insert-statement.aspx) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list);
+```Code language: SQL (Structured Query Language) (sql)
+[Insert multiple rows](https://www.mysqltutorial.org/mysql-insert-multiple-rows/) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list1),       (value_list2),       (value_list3),       ...;
+```Code language: SQL (Structured Query Language) (sql)
+[Update](https://www.mysqltutorial.org/mysql-update-data.aspx) all rows in a table:
+```bash
+UPDATE table_name SET column1 = value1,     ...;
+```Code language: SQL (Structured Query Language) (sql)
+Update data for a set of rows specified by a condition in `WHERE` clause.
+```bash
+UPDATE table_name SET column_1 = value_1,     ... WHERE condition
+```Code language: SQL (Structured Query Language) (sql)
+[Update with join](https://www.mysqltutorial.org/mysql-update-join/)
+```bash
+UPDATE      table1,      table2 INNER JOIN table1 ON table1.column1 = table2.column2 SET column1 = value1, WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete all rows in a table](https://www.mysqltutorial.org/mysql-delete-statement.aspx)
+```bash
+DELETE FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Delete rows specified by a condition:
+```bash
+DELETE FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete with join](https://www.mysqltutorial.org/mysql-delete-join/)
+```bash
+DELETE table1, table2 FROM table1 INNER JOIN table2     ON table1.column1 = table2.column2 WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Searching
+Search for data using the `[LIKE](https://www.mysqltutorial.org/mysql-like/)` operator:
+```bash
+SELECT select_list FROM table_name WHERE column LIKE '%pattern%';
+```Code language: SQL (Structured Query Language) (sql)
+Text search using a [regular expression](https://www.mysqltutorial.org/mysql-regular-expression-regexp.aspx) with `RLIKE` operator.
+```bash
+SELECT select_list FROM table_name WHERE column RLIKE 'regular_expression'
+```Code language: SQL (Structured Query Language) (sql)
+Connect to MySQL Server with a specified database using a username and password:
+```bash
+mysql -u [username] -p [database];
+```Code language: SQL (Structured Query Language) (sql)
+Exit mysql command-line client:
+```bash
+exit;
+```Code language: SQL (Structured Query Language) (sql)
+[Export data using mysqldump tool](https://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx)
+```bash
+```mysqldump -u [username] -p [database] > data_backup.sql;
+```bash
+`
+```Code language: SQL (Structured Query Language) (sql)
+To clear MySQL screen console window on Linux, you use the following command:
+```bash
+mysql> system clear;
+```Code language: SQL (Structured Query Language) (sql)
+Currently, there is no command available on Windows OS for clearing MySQL screen console window.
+## Working with databases
+[Create a database](https://www.mysqltutorial.org/mysql-create-drop-database.aspx) with a specified name if it does not exist in the database server
+```bash
+CREATE DATABASE [IF NOT EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Use a database or change the current database to another database that you are working with:
+```bash
+USE database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a database with a specified name permanently. All physical files associated with the database will be deleted.
+```bash
+DROP DATABASE [IF EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show all available databases in the current MySQL database server
+```bash
+SHOW DATABASE;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with tables
+Show all tables in a current database.
+```bash
+SHOW TABLES;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a new table](https://www.mysqltutorial.org/mysql-create-table/)
+```bash
+CREATE TABLE [IF NOT EXISTS] table_name(   column_list );
+```Code language: SQL (Structured Query Language) (sql)
+[Add a new column](https://www.mysqltutorial.org/mysql-add-column/) into a table:
+```bash
+ALTER TABLE table  ADD [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Drop a column](https://www.mysqltutorial.org/mysql-drop-column/) from a table:
+```bash
+ALTER TABLE table_name DROP [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+Add index with a specific name to a table on a column:
+```bash
+ALTER TABLE table  ADD INDEX [name](column, ...);
+```Code language: SQL (Structured Query Language) (sql)
+Add [primary key](https://www.mysqltutorial.org/mysql-primary-key/) into a table:
+```bash
+ALTER TABLE table_name  ADD PRIMARY KEY (column_name,...);
+```Remove the primary key of a table:
+```bash
+ALTER TABLE table_name DROP PRIMARY KEY;
+```[Drop a table](https://www.mysqltutorial.org/mysql-drop-table):
+```bash
+DROP TABLE [IF EXISTS] table_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Show the columns](https://www.mysqltutorial.org/mysql-show-columns/) of a table:
+```bash
+DESCRIBE table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show the information of a column in a table:
+```bash
+DESCRIBE table_name column_name;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with indexes
+[Creating an index](https://www.mysqltutorial.org/mysql-index/mysql-create-index/) with the specified name on a table:
+```bash
+CREATE INDEX index_name ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+[Drop an index](https://www.mysqltutorial.org/mysql-index/mysql-drop-index/):
+```bash
+DROP INDEX index_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a unique index](https://www.mysqltutorial.org/mysql-unique/):
+```bash
+CREATE UNIQUE INDEX index_name  ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+## Working with views
+Create a new view:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS    select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Create a new view with the `WITH CHECK OPTION`:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS select_statement WITH CHECK OPTION;
+```Code language: SQL (Structured Query Language) (sql)
+Create or replace a view:
+```bash
+CREATE OR REPLACE view_name  AS  select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a view:
+```bash
+DROP VIEW [IF EXISTS] view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop multiple views:
+```bash
+DROP VIEW [IF EXISTS] view1, view2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Rename a view:
+```bash
+RENAME TABLE view_name TO new_view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show views from a database:
+```bash
+SHOW FULL TABLES [{FROM | IN } database_name] WHERE table_type = 'VIEW';
+```Code language: SQL (Structured Query Language) (sql)
+## Working with triggers
+Create a new trigger:
+```bash
+CREATE TRIGGER trigger_name {BEFORE | AFTER} {INSERT | UPDATE| DELETE } ON table_name FOR EACH ROW trigger_body;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a trigger:
+```bash
+DROP TRIGGER [IF EXISTS] trigger_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show triggers in a database:
+```bash
+SHOW TRIGGERS [{FROM | IN} database_name] [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored procedures
+Create a stored procedure:
+```bash
+DELIMITER $$  CREATE PROCEDURE procedure_name(parameter_list) BEGIN    body; END $$  DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored procedure:
+```bash
+DROP PROCEDURE [IF EXISTS] procedure_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored procedures:
+```bash
+SHOW PROCEDURE STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored functions
+Create a new stored function:
+```bash
+DELIMITER $$   CREATE FUNCTION function_name(parameter_list) RETURNS datatype [NOT] DETERMINISTIC BEGIN  -- statements END $$   DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored function:
+```bash
+DROP FUNCTION [IF EXISTS] function_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored functions:
+```bash
+SHOW FUNCTION STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Querying data from tables
+[Query all data](https://www.mysqltutorial.org/mysql-select-statement-query-data.aspx) from a table:
+```bash
+SELECT * FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from one or more column of a table:
+```bash
+SELECT      column1, column2, ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Remove duplicate rows from the result of a query:
+```bash
+SELECT      DISTINCT (column) FROM     table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data with a filter using a `[WHERE](https://www.mysqltutorial.org/mysql-where/)` clause:
+```bash
+SELECT select_list FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+Change the output of the column name using [column alias](https://www.mysqltutorial.org/mysql-alias/):
+```bash
+SELECT      column1 AS alias_name,     expression AS alias,     ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [inner join](https://www.mysqltutorial.org/mysql-inner-join.aspx):
+```bash
+SELECT select_list FROM table1 INNER JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [left join](https://www.mysqltutorial.org/mysql-left-join.aspx):
+```bash
+SELECT select_list FROM table1  LEFT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [right join](https://www.mysqltutorial.org/mysql-right-join/):
+```bash
+SELECT select_list  FROM table1  RIGHT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Make a Cartesian product of rows:
+```bash
+SELECT select_list FROM table1 CROSS JOIN table2;
+```Code language: SQL (Structured Query Language) (sql)
+[Counting rows](https://www.mysqltutorial.org/mysql-count/) in a table.
+```bash
+SELECT COUNT(*) FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Sorting a result set:
+```bash
+SELECT      select_list FROM      table_name ORDER BY      column1 ASC [DESC],      column2 ASC [DESC];
+```Code language: SQL (Structured Query Language) (sql)
+Group rows using the [`GROUP BY`](https://www.mysqltutorial.org/mysql-group-by.aspx) clause.
+```bash
+SELECT select_list FROM table_name GROUP BY column_1, column_2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Filter group using the `[HAVING](https://www.mysqltutorial.org/mysql-having.aspx)` clause:
+```bash
+SELECT select_list FROM table_name GROUP BY column1 HAVING condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Modifying data in tables
+[Insert a new row](https://www.mysqltutorial.org/mysql-insert-statement.aspx) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list);
+```Code language: SQL (Structured Query Language) (sql)
+[Insert multiple rows](https://www.mysqltutorial.org/mysql-insert-multiple-rows/) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list1),       (value_list2),       (value_list3),       ...;
+```Code language: SQL (Structured Query Language) (sql)
+[Update](https://www.mysqltutorial.org/mysql-update-data.aspx) all rows in a table:
+```bash
+UPDATE table_name SET column1 = value1,     ...;
+```Code language: SQL (Structured Query Language) (sql)
+Update data for a set of rows specified by a condition in `WHERE` clause.
+```bash
+UPDATE table_name SET column_1 = value_1,     ... WHERE condition
+```Code language: SQL (Structured Query Language) (sql)
+[Update with join](https://www.mysqltutorial.org/mysql-update-join/)
+```bash
+UPDATE      table1,      table2 INNER JOIN table1 ON table1.column1 = table2.column2 SET column1 = value1, WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete all rows in a table](https://www.mysqltutorial.org/mysql-delete-statement.aspx)
+```bash
+DELETE FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Delete rows specified by a condition:
+```bash
+DELETE FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete with join](https://www.mysqltutorial.org/mysql-delete-join/)
+```bash
+DELETE table1, table2 FROM table1 INNER JOIN table2     ON table1.column1 = table2.column2 WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Searching
+Search for data using the `[LIKE](https://www.mysqltutorial.org/mysql-like/)` operator:
+```bash
+SELECT select_list FROM table_name WHERE column LIKE '%pattern%';
+```Code language: SQL (Structured Query Language) (sql)
+Text search using a [regular expression](https://www.mysqltutorial.org/mysql-regular-expression-regexp.aspx) with `RLIKE` operator.
+```bash
+SELECT select_list FROM table_name WHERE column RLIKE 'regular_expression'
+```Code language: SQL (Structured Query Language) (sql)
+Connect to MySQL Server with a specified database using a username and password:
+```bash
+mysql -u [username] -p [database];
+```Code language: SQL (Structured Query Language) (sql)
+Exit mysql command-line client:
+```bash
+exit;
+```Code language: SQL (Structured Query Language) (sql)
+[Export data using mysqldump tool](https://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx)
+```bash
+```mysqldump -u [username] -p [database] > data_backup.sql;
+```bash
+`
+```Code language: SQL (Structured Query Language) (sql)
+To clear MySQL screen console window on Linux, you use the following command:
+```bash
+mysql> system clear;
+```Code language: SQL (Structured Query Language) (sql)
+Currently, there is no command available on Windows OS for clearing MySQL screen console window.
+## Working with databases
+[Create a database](https://www.mysqltutorial.org/mysql-create-drop-database.aspx) with a specified name if it does not exist in the database server
+```bash
+CREATE DATABASE [IF NOT EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Use a database or change the current database to another database that you are working with:
+```bash
+USE database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a database with a specified name permanently. All physical files associated with the database will be deleted.
+```bash
+DROP DATABASE [IF EXISTS] database_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show all available databases in the current MySQL database server
+```bash
+SHOW DATABASE;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with tables
+Show all tables in a current database.
+```bash
+SHOW TABLES;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a new table](https://www.mysqltutorial.org/mysql-create-table/)
+```bash
+CREATE TABLE [IF NOT EXISTS] table_name(   column_list );
+```Code language: SQL (Structured Query Language) (sql)
+[Add a new column](https://www.mysqltutorial.org/mysql-add-column/) into a table:
+```bash
+ALTER TABLE table  ADD [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Drop a column](https://www.mysqltutorial.org/mysql-drop-column/) from a table:
+```bash
+ALTER TABLE table_name DROP [COLUMN] column_name;
+```Code language: SQL (Structured Query Language) (sql)
+Add index with a specific name to a table on a column:
+```bash
+ALTER TABLE table  ADD INDEX [name](column, ...);
+```Code language: SQL (Structured Query Language) (sql)
+Add [primary key](https://www.mysqltutorial.org/mysql-primary-key/) into a table:
+```bash
+ALTER TABLE table_name  ADD PRIMARY KEY (column_name,...);
+```Remove the primary key of a table:
+```bash
+ALTER TABLE table_name DROP PRIMARY KEY;
+```[Drop a table](https://www.mysqltutorial.org/mysql-drop-table):
+```bash
+DROP TABLE [IF EXISTS] table_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Show the columns](https://www.mysqltutorial.org/mysql-show-columns/) of a table:
+```bash
+DESCRIBE table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show the information of a column in a table:
+```bash
+DESCRIBE table_name column_name;
+```Code language: SQL (Structured Query Language) (sql)
+## Working with indexes
+[Creating an index](https://www.mysqltutorial.org/mysql-index/mysql-create-index/) with the specified name on a table:
+```bash
+CREATE INDEX index_name ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+[Drop an index](https://www.mysqltutorial.org/mysql-index/mysql-drop-index/):
+```bash
+DROP INDEX index_name;
+```Code language: SQL (Structured Query Language) (sql)
+[Create a unique index](https://www.mysqltutorial.org/mysql-unique/):
+```bash
+CREATE UNIQUE INDEX index_name  ON table_name (column,...);
+```Code language: SQL (Structured Query Language) (sql)
+## Working with views
+Create a new view:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS    select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Create a new view with the `WITH CHECK OPTION`:
+```bash
+CREATE VIEW [IF NOT EXISTS] view_name  AS select_statement WITH CHECK OPTION;
+```Code language: SQL (Structured Query Language) (sql)
+Create or replace a view:
+```bash
+CREATE OR REPLACE view_name  AS  select_statement;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a view:
+```bash
+DROP VIEW [IF EXISTS] view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Drop multiple views:
+```bash
+DROP VIEW [IF EXISTS] view1, view2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Rename a view:
+```bash
+RENAME TABLE view_name TO new_view_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show views from a database:
+```bash
+SHOW FULL TABLES [{FROM | IN } database_name] WHERE table_type = 'VIEW';
+```Code language: SQL (Structured Query Language) (sql)
+## Working with triggers
+Create a new trigger:
+```bash
+CREATE TRIGGER trigger_name {BEFORE | AFTER} {INSERT | UPDATE| DELETE } ON table_name FOR EACH ROW trigger_body;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a trigger:
+```bash
+DROP TRIGGER [IF EXISTS] trigger_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show triggers in a database:
+```bash
+SHOW TRIGGERS [{FROM | IN} database_name] [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored procedures
+Create a stored procedure:
+```bash
+DELIMITER $$  CREATE PROCEDURE procedure_name(parameter_list) BEGIN    body; END $$  DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored procedure:
+```bash
+DROP PROCEDURE [IF EXISTS] procedure_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored procedures:
+```bash
+SHOW PROCEDURE STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Working with stored functions
+Create a new stored function:
+```bash
+DELIMITER $$   CREATE FUNCTION function_name(parameter_list) RETURNS datatype [NOT] DETERMINISTIC BEGIN  -- statements END $$   DELIMITER ;
+```Code language: SQL (Structured Query Language) (sql)
+Drop a stored function:
+```bash
+DROP FUNCTION [IF EXISTS] function_name;
+```Code language: SQL (Structured Query Language) (sql)
+Show stored functions:
+```bash
+SHOW FUNCTION STATUS  [LIKE 'pattern' | WHERE search_condition];
+```Code language: SQL (Structured Query Language) (sql)
+## Querying data from tables
+[Query all data](https://www.mysqltutorial.org/mysql-select-statement-query-data.aspx) from a table:
+```bash
+SELECT * FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from one or more column of a table:
+```bash
+SELECT      column1, column2, ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Remove duplicate rows from the result of a query:
+```bash
+SELECT      DISTINCT (column) FROM     table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data with a filter using a `[WHERE](https://www.mysqltutorial.org/mysql-where/)` clause:
+```bash
+SELECT select_list FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+Change the output of the column name using [column alias](https://www.mysqltutorial.org/mysql-alias/):
+```bash
+SELECT      column1 AS alias_name,     expression AS alias,     ... FROM      table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [inner join](https://www.mysqltutorial.org/mysql-inner-join.aspx):
+```bash
+SELECT select_list FROM table1 INNER JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [left join](https://www.mysqltutorial.org/mysql-left-join.aspx):
+```bash
+SELECT select_list FROM table1  LEFT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Query data from multiple tables using [right join](https://www.mysqltutorial.org/mysql-right-join/):
+```bash
+SELECT select_list  FROM table1  RIGHT JOIN table2 ON condition;
+```Code language: SQL (Structured Query Language) (sql)
+Make a Cartesian product of rows:
+```bash
+SELECT select_list FROM table1 CROSS JOIN table2;
+```Code language: SQL (Structured Query Language) (sql)
+[Counting rows](https://www.mysqltutorial.org/mysql-count/) in a table.
+```bash
+SELECT COUNT(*) FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Sorting a result set:
+```bash
+SELECT      select_list FROM      table_name ORDER BY      column1 ASC [DESC],      column2 ASC [DESC];
+```Code language: SQL (Structured Query Language) (sql)
+Group rows using the [`GROUP BY`](https://www.mysqltutorial.org/mysql-group-by.aspx) clause.
+```bash
+SELECT select_list FROM table_name GROUP BY column_1, column_2, ...;
+```Code language: SQL (Structured Query Language) (sql)
+Filter group using the `[HAVING](https://www.mysqltutorial.org/mysql-having.aspx)` clause:
+```bash
+SELECT select_list FROM table_name GROUP BY column1 HAVING condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Modifying data in tables
+[Insert a new row](https://www.mysqltutorial.org/mysql-insert-statement.aspx) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list);
+```Code language: SQL (Structured Query Language) (sql)
+[Insert multiple rows](https://www.mysqltutorial.org/mysql-insert-multiple-rows/) into a table:
+```bash
+INSERT INTO table_name(column_list) VALUES(value_list1),       (value_list2),       (value_list3),       ...;
+```Code language: SQL (Structured Query Language) (sql)
+[Update](https://www.mysqltutorial.org/mysql-update-data.aspx) all rows in a table:
+```bash
+UPDATE table_name SET column1 = value1,     ...;
+```Code language: SQL (Structured Query Language) (sql)
+Update data for a set of rows specified by a condition in `WHERE` clause.
+```bash
+UPDATE table_name SET column_1 = value_1,     ... WHERE condition
+```Code language: SQL (Structured Query Language) (sql)
+[Update with join](https://www.mysqltutorial.org/mysql-update-join/)
+```bash
+UPDATE      table1,      table2 INNER JOIN table1 ON table1.column1 = table2.column2 SET column1 = value1, WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete all rows in a table](https://www.mysqltutorial.org/mysql-delete-statement.aspx)
+```bash
+DELETE FROM table_name;
+```Code language: SQL (Structured Query Language) (sql)
+Delete rows specified by a condition:
+```bash
+DELETE FROM table_name WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+[Delete with join](https://www.mysqltutorial.org/mysql-delete-join/)
+```bash
+DELETE table1, table2 FROM table1 INNER JOIN table2     ON table1.column1 = table2.column2 WHERE condition;
+```Code language: SQL (Structured Query Language) (sql)
+## Searching
+Search for data using the `[LIKE](https://www.mysqltutorial.org/mysql-like/)` operator:
+```bash
+SELECT select_list FROM table_name WHERE column LIKE '%pattern%';
+```Code language: SQL (Structured Query Language) (sql)
+Text search using a [regular expression](https://www.mysqltutorial.org/mysql-regular-expression-regexp.aspx) with `RLIKE` operator.
+```bash
+SELECT select_list FROM table_name WHERE column RLIKE 'regular_expression'
+```

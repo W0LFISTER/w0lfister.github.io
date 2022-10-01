@@ -1,0 +1,5 @@
+**Finds hidden PHP dir
+
+```bash
+gobuster dir --url http://$IP/ --wordlist /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt -x php
+```

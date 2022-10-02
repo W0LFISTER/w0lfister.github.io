@@ -1,2 +1,0 @@
-# OSCP
-Just my notes

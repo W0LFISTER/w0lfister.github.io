@@ -59,4 +59,4 @@ Command
 git pull origin master
 ```
 
-2. Add username and Key
+2. Add username and Key.

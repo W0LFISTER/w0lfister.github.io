@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+            "file": "TOOLS/GIT/HOW TO.md",
             "mode": "source",
             "source": false
           }
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+                "file": "TOOLS/GIT/HOW TO.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+                "file": "TOOLS/GIT/HOW TO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CTE/HTB/STARTING POINT/TIER1/Responder.md"
+                "file": "TOOLS/GIT/HOW TO.md"
               }
             }
           }
@@ -145,15 +145,15 @@
   },
   "active": "d8639350542a8280",
   "lastOpenFiles": [
-    "SERVICES/WinRM/evil-winrm.md",
+    "zz Templates/temp stuff.md",
+    "TOOLS/GIT/HOW TO.md",
     "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+    "SERVICES/WinRM/evil-winrm.md",
     "TOOLS/johntheripper/HOW TO.md",
     "TOOLS/johntheripper/MAN.md",
-    "zz Templates/temp stuff.md",
     "TOOLS/gobuster/cheatsheet.md",
     "CTE/HTB/STARTING POINT/TIER1/Crocodile.md",
     "zz Templates/HTBTEMP.md",
-    "CTE/HTB/STARTING POINT/TIER1/Appointment.md",
-    "CTE/HTB/STARTING POINT/TIER1/Sequel.md"
+    "CTE/HTB/STARTING POINT/TIER1/Appointment.md"
   ]
 }

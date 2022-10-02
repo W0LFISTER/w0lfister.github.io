@@ -6,7 +6,7 @@
       {
         "id": "d8639350542a8280",
         "type": "leaf",
-        "dimension": 77.87610619469027,
+        "dimension": 63.82743362831859,
         "state": {
           "type": "markdown",
           "state": {
@@ -19,7 +19,7 @@
       {
         "id": "11d49ee8940ccfd5",
         "type": "leaf",
-        "dimension": 22.123893805309734,
+        "dimension": 36.17256637168141,
         "state": {
           "type": "markdown",
           "state": {
@@ -145,15 +145,15 @@
   },
   "active": "d8639350542a8280",
   "lastOpenFiles": [
+    "CTE/HTB/STARTING POINT/TIER1/Three.md",
     "zz Templates/temp stuff.md",
+    "TOOLS/aswcli/Cheatsheet.md",
+    "TOOLS/aswcli/How to.md",
+    "zz Templates/HTBTEMP.md",
     "TOOLS/GIT/HOW TO.md",
     "CTE/HTB/STARTING POINT/TIER1/Responder.md",
     "SERVICES/WinRM/evil-winrm.md",
     "TOOLS/johntheripper/HOW TO.md",
-    "TOOLS/johntheripper/MAN.md",
-    "TOOLS/gobuster/cheatsheet.md",
-    "CTE/HTB/STARTING POINT/TIER1/Crocodile.md",
-    "zz Templates/HTBTEMP.md",
-    "CTE/HTB/STARTING POINT/TIER1/Appointment.md"
+    "TOOLS/johntheripper/MAN.md"
   ]
 }

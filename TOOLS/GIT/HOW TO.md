@@ -25,7 +25,7 @@ Command
 git status
 ```
 
-2. Stage files to be commited.
+[[Vaccine]]2. Stage files to be commited.
 
 Command
 ```bash
@@ -47,16 +47,26 @@ git push origin master
 ```
 
 5. Add username and Key
+	1.  Username is `w0lfister`
+	2. Use access token found at **Settings** => **Developer Settings** => **Personal Access Token** => **Generate New Token** (Give your password) => **Fillup the form** => click **Generate token** => **Copy the generated Token**.
+	3.  After using token store it to use later.
 
----
-## Update local Repo
-___
-
-1. Pull Remote Repo
-
-Command
 ```bash
-git pull origin master
+$ git config --global credential.helper cache
+```
+6. Remove creds
+```bash
+$ git config --global --unset credential.helper
+$ git config --system --unset credential.helpe
 ```
 
-2. Add username and Key.
+
+---
+## Clone Remote Repo
+___
+1. Get Repo with htts
+
+```bash
+git clone https://github.com/W0LFISTER/OSCP.git
+```
+

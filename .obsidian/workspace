@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "TRAINING/TryHackMe/To Do.md",
+            "file": "zz Templates/HTBTEMP.md",
             "mode": "source",
             "source": false
           }
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#redis_version",
+                "query": "sql com",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TRAINING/TryHackMe/To Do.md",
+                "file": "zz Templates/HTBTEMP.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TRAINING/TryHackMe/To Do.md",
+                "file": "zz Templates/HTBTEMP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TRAINING/TryHackMe/To Do.md"
+                "file": "zz Templates/HTBTEMP.md"
               }
             }
           }
@@ -145,15 +145,15 @@
   },
   "active": "d8639350542a8280",
   "lastOpenFiles": [
-    "TOOLS/PowerView/Commands.md",
     "TRAINING/TryHackMe/To Do.md",
+    "Untitled.md",
+    "TRAINING/HackTheBox/STARTING POINT/TIER2/Vaccine.md",
+    "SERVICES/Redis Server/REDIS CLI COMMANDS.md",
     "zz Templates/temp stuff.md",
-    "TOOLS/GIT/HOW TO.md",
-    "TRAINING/HackTheBox/STARTING POINT/TIER1/Three.md",
-    "TRAINING/HackTheBox/STARTING POINT/TIER1/Responder.md",
-    "SERVICES/WinRM/evil-winrm.md",
-    "TOOLS/johntheripper/HOW TO.md",
-    "TOOLS/johntheripper/MAN.md",
-    "TOOLS/gobuster/cheatsheet.md"
+    "SERVICES/Redis Server/Info.md",
+    "SERVICES/MySQL/COMMANDS.md",
+    "TOOLS/CHEAT SHEETS/system-hacking-cheat-sheet.md",
+    "TOOLS/sqlmap/HOW TO.md",
+    "TRAINING/HackTheBox/STARTING POINT/TIER2/Oopsie.md"
   ]
 }

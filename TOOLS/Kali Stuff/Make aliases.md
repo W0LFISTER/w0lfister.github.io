@@ -4,7 +4,7 @@
 ---
 Get xsel
 ```bash
-sudo apt instal xsel
+sudo apt install xsel
 ```
 
 From the home directory open the `.zshrc` file
@@ -16,5 +16,5 @@ code .zshrc
 add alias
 ```bash
 # make copy aliases
-alias copy='xsel -ib'
+alias copy=' tee /dev/tty|xsel -ib'
 ```
